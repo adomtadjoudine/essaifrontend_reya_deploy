@@ -1,0 +1,1 @@
+// Gestionnaire d'erreurs centralisé
