@@ -721,7 +721,7 @@ export function ServiceModal({ open, onOpenChange, service, onSave }: ServiceMod
                             className="h-4 w-4"
                           />
                           <label htmlFor={`temp-${temperature.id}`} className="flex-1 cursor-pointer">
-                            {temperature.nom}
+                            {temperature.valeur}
                           </label>
                           {isOptionSelected("temperature", temperature.id) && (
                             <Input
