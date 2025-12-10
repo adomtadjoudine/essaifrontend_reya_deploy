@@ -716,7 +716,7 @@ export function ServiceModal({ open, onOpenChange, service, onSave }: ServiceMod
                             type="checkbox"
                             id={`temp-${temperature.id}`}
                             checked={isOptionSelected("temperature", temperature.id)}
-                            onChange={() => toggleOptionWithPrice("temperature", temperature.id, temperature.nom)}
+                            onChange={() => toggleOptionWithPrice("temperature", temperature.id, temperature.valeur)}
                             disabled={saving}
                             className="h-4 w-4"
                           />

@@ -49,22 +49,12 @@ export const HTTP_STATUS = {
 
 export const getFileUrl = (relativePath: string): string => {
   if (!relativePath) return ""
-
-  // Si le chemin commence par /uploads/, le convertir au format /api/files/:type/:filename
-  if (relativePath.startsWith("/uploads/")) {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://a96c7bykrwf.preview.hosting-ik.com"
-    // Extraire le type et le nom du fichier
-    // Exemple: /uploads/services/abc123.jpg -> /api/files/services/abc123.jpg
-    return `${baseUrl}/api/files${relativePath}`
-  }
-
   // If already an absolute URL, return as is
   if (relativePath.startsWith("http://") || relativePath.startsWith("https://")) {
     return relativePath
   }
   // Prepend API base URL to relative paths
-  // const baseUrl = API_CONFIG.BASE_URL
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://a96c7bykrwf.preview.hosting-ik.com"
+  const baseUrl = API_CONFIG.BASE_URL
   const path = relativePath.startsWith("/") ? relativePath : `/${relativePath}`
   return `${baseUrl}${path}`
 }
